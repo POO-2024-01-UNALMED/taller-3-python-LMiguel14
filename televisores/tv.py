@@ -1,6 +1,7 @@
+from marca import Marca
 class TV ():
     numTV = 0
-
+    
     def __init__(self, marca, estado):
         self.marca = marca
         self.estado = estado
@@ -8,7 +9,7 @@ class TV ():
         self.precio = 500
         self.volumen = 1
         self.control = None
-
+                
     def getNumTV(self):
         return self.numTV
     def getMarca(self):
@@ -26,19 +27,34 @@ class TV ():
     
     def setNumTV(self,numTv):
         self.numTV= numTv
-    def setMarca(self, marca):
+    def setMarca(self, marca ):
         self.marca = marca
     def setCanal(self,canal):
-        self.canal = canal
+        if  1 < canal <=120  and self.estado == True:
+            self.canal = canal        
     def setPrecio(self,precio):
         self.precio = precio
     def setVolumen(self,volumen):
-        self.volumen = volumen
+        if  0 < volumen <=7 and self.estado == True:
+            self.volumen = volumen
     def setControl(self,control):
         self.control = control
-
 
     def turnOff(self):
         self.estado = False
     def turnOn(self):
         self.estado = True
+
+    def canalDown(self):
+        if  (1 < self.canal < 120) and  self.estado == True:
+            self.canal -= 1        
+    def canalUp(self):
+        if (self.canal < 120) and  self.estado == True:
+            self.canal += 1
+
+    def volumenUp(self):
+        if (self.volumen < 7) and  self.estado == True:
+            self.volumen += 1
+    def volumenDown(self):
+        if  (0 < self.volumen <=7) and  self.estado == True:
+            self.volumen -= 1
