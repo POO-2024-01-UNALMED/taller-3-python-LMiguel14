@@ -1,3 +1,5 @@
+from tv import TV
+from marca import Marca
 class Control():
     tv = None
     
@@ -30,5 +32,4 @@ class Control():
             self.volumen += 1
     def volumenDown(self):
         if  (0 < self.volumen <=7) and  self.estado == True:
-            self.volumen -= 1
-    
+            self.volumen -= 1    
