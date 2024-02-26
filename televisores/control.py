@@ -1,4 +1,4 @@
-from televisores.tv import TV
+from tv import TV
 class Control():
     tv = None
     
@@ -10,29 +10,27 @@ class Control():
         self.tv = televisor
 
     def setVolumen(self,volumen):
-        if  0 < volumen <=7 and self.estado == True:
-            self.volumen = volumen
+        if  0 < volumen <=7 and TV.getEstado(self) == True:
+            TV.setVolumen(volumen) 
 
     def setCanal(self,canal):
-        if  1 < canal <=120  and self.estado == True:
-            self.canal = canal        
+        if  1 < canal <=120  and TV.getEstado(self) == True:
+            TV.setCanal(canal)        
 
     def turnOff(self):
-        self.estado = False
+        TV.turnOff()
     def turnOn(self):
-        self.estado = True
+        TV.turnOn()
 
     def canalDown(self):
-        if  (1 < self.canal < 120) and  self.estado == True:
-            self.canal -= 1        
+        if  (1 < TV.getCanal() < 120) and  TV.getEstado() == True:
+            TV.canalDown()        
     def canalUp(self):
-        if (self.canal < 120) and  self.estado == True:
-            self.canal += 1
-
+        if (TV.getCanal() < 120) and  TV.getEstado() == True:
+            TV.canalUp()
     def volumenUp(self):
-        if (self.volumen < 7) and  self.estado == True:
-            self.volumen += 1
+        if (TV.getVolumen() < 7) and  TV.getEstado() == True:
+            TV.volumenUp()
     def volumenDown(self):
-        if  (0 < self.volumen <=7) and  self.estado == True:
-            self.volumen -= 1
-
+        if  (0 < TV.getVolumen() <=7) and  TV.getEstado() == True:
+            TV.volumenDown()
