@@ -3,7 +3,7 @@ class Control():
     tv = None
     
     def enlazar(self, televisor):
-        self.tv = televisor
+        self.tv = TV(televisor)
     def getTv(self):
         return self.tv
     def setTv(self,televisor):
