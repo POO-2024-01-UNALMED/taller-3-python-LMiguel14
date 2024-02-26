@@ -1,6 +1,4 @@
-from televisores.tv import TV
 class Control():
-
     tv = None
     
     def enlazar(self, televisor):
@@ -9,16 +7,19 @@ class Control():
         return self.tv
     def setTv(self,televisor):
         self.tv = televisor
-    def setCanal(self,canal):
-        if  1 < canal <=120  and TV.getEstado() == True:
-            self.canal = canal    
+
     def setVolumen(self,volumen):
-        if  0 < volumen <=7 and TV.getEstado() == True:
+        if  0 < volumen <=7 and self.estado == True:
             self.volumen = volumen
+            
+    def setCanal(self,canal):
+        if  1 < canal <=120  and self.estado == True:
+            self.canal = canal        
+
     def turnOff(self):
-        TV.turnOff = False
+        self.estado = False
     def turnOn(self):
-        TV.turnOn = True
+        self.estado = True
 
     def canalDown(self):
         if  (1 < self.canal < 120) and  self.estado == True:
@@ -32,5 +33,5 @@ class Control():
             self.volumen += 1
     def volumenDown(self):
         if  (0 < self.volumen <=7) and  self.estado == True:
-            self.volumen -= 1    
+            self.volumen -= 1
 
