@@ -1,3 +1,4 @@
+from tv import TV
 class Control():
     tv = None
     
@@ -11,7 +12,7 @@ class Control():
     def setVolumen(self,volumen):
         if  0 < volumen <=7 and self.estado == True:
             self.volumen = volumen
-            
+
     def setCanal(self,canal):
         if  1 < canal <=120  and self.estado == True:
             self.canal = canal        
