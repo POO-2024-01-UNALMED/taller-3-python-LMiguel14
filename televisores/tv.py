@@ -24,8 +24,8 @@ class TV ():
     def getEstado (self):
         return self.estado
     
-    def setNumTV(self,numTv):
-        self.numTV= numTv
+    def setNumTV(self,num):
+        self.numTV= num
     def setMarca(self, marca ):
         self.marca = marca
     def setCanal(self,canal):
@@ -57,4 +57,3 @@ class TV ():
     def volumenDown(self):
         if  (0 < self.volumen <=7) and  self.estado == True:
             self.volumen -= 1
-    
