@@ -1,6 +1,6 @@
-from televisores.tv import TV
-from televisores.marca import Marca
+from tv import TV
 class Control():
+
     tv = None
     
     def enlazar(self, televisor):
@@ -33,3 +33,4 @@ class Control():
     def volumenDown(self):
         if  (0 < self.volumen <=7) and  self.estado == True:
             self.volumen -= 1    
+
