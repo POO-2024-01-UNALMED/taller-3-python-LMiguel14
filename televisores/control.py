@@ -1,4 +1,3 @@
-from televisores.tv import TV
 
 class Control():
     tv = None
