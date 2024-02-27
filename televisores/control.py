@@ -1,4 +1,5 @@
-from televisores.tv import TV
+from tv import TV
+from marca import Marca
 class Control:
     def __init__(self):
         self.tv = None
@@ -35,10 +36,9 @@ class Control:
             self.tv.volumen -= 1
 
     def setCanal(self, canal):
-        if 1 <= canal <= 120:
+        if 1 <= canal <= 120 and self.tv.getEstado():
             self.tv.canal = canal
 
     def setVolumen(self, volumen):
         if 0 <= volumen <= 7 and self.tv.getEstado():
             self.tv.volumen = volumen
-
