@@ -1,6 +1,8 @@
+from marca import Marca
 class TV ():
     numTV = 0
     def __init__(self, marca, estado):
+        TV.numTV += 1
         self.marca = marca
         self.estado = estado
         self.canal = 1
@@ -23,8 +25,12 @@ class TV ():
     def getEstado (self):
         return self.estado
     
-    def setNumTV(self,num):
-        self.numTV= num
+
+    def setNumTV(self,numero):
+        self.numTV = numero
+        
+
+
     def setMarca(self, marca ):
         self.marca = marca
     def setCanal(self,canal):
@@ -35,7 +41,6 @@ class TV ():
     def setVolumen(self,volumen):
         if  0 < volumen <=7 and self.estado == True:
             self.volumen = volumen
-
 
     def setControl(self,control):
         self.control = control
@@ -58,3 +63,4 @@ class TV ():
     def volumenDown(self):
         if  (0 < self.volumen <=7) and  self.estado == True:
             self.volumen -= 1
+   
