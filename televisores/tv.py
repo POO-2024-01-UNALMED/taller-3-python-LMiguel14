@@ -1,3 +1,4 @@
+from marca import Marca
 class TV ():
     numTV = 0
     def __init__(self, marca, estado):
@@ -8,9 +9,10 @@ class TV ():
         self.precio = 500
         self.volumen = 1
         self.control = None
-                
+
+    @classmethod
     def getNumTV(self):
-        return self.numTV
+        return TV.numTV
     def getMarca(self):
         return self.marca
     def getCanal(self):
@@ -24,12 +26,10 @@ class TV ():
     def getEstado (self):
         return self.estado
     
-
-    def setNumTV(self, num):
-        self.numTV = num
+    @classmethod
+    def setNumTV(self,num):
+        TV.numTV = num 
         
-
-
     def setMarca(self, marca ):
         self.marca = marca
     def setCanal(self,canal):
