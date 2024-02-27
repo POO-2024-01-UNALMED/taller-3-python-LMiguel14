@@ -25,8 +25,8 @@ class TV ():
         return self.estado
     
 
-    def setNumTV(self,numero):
-        self.numTV = numero
+    def setNumTV(self, num):
+        self.numTV = num
         
 
 
@@ -63,3 +63,4 @@ class TV ():
         if  (0 < self.volumen <=7) and  self.estado == True:
             self.volumen -= 1
    
+
