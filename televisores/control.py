@@ -1,4 +1,4 @@
-from tv import TV
+from televisores.tv import TV
 class Control():
     tv = None
     
@@ -31,12 +31,3 @@ class Control():
     def volumenDown(self):
         if  (0 < TV.getVolumen(self.tv) <=7) and  TV.getEstado(self.tv) == True:
             TV.volumenDown(self.tv)    
-televisor= TV("lg", True)
-control= Control()
-
-control.enlazar(televisor)
-
-print(televisor.volumen)
-control.volumenDown()
-
-print(televisor.volumen)
