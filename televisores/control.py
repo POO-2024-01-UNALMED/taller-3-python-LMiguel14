@@ -1,17 +1,17 @@
-from televisores.tv import TV
+from televisores.tv import TV                    
 from televisores.marca import Marca
 class Control:
     def __init__(self):
         self.tv = None
+    
+    def enlazar(self, tele):               
+        self.tv = tele
+        tele.control = self.tv
 
     def getTv(self):
         return self.tv
-
     def setTv(self, tv):
         self.tv = tv
-
-    def enlazar(self, tele):
-        self.tv = tele
 
     def turnOn(self):
         self.tv.estado = True
@@ -42,3 +42,5 @@ class Control:
     def setVolumen(self, volumen):
         if 0 <= volumen <= 7 and self.tv.getEstado():
             self.tv.volumen = volumen
+
+
