@@ -1,6 +1,6 @@
 from televisores.tv import TV
 class Control():
-    tv = None
+    tv = ""
     
     def enlazar(self, televisor):
         self.tv = televisor
